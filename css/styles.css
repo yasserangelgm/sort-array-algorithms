@@ -1,0 +1,9 @@
+.barContainer {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.bar {
+  margin: 0 2px 0 2px;
+}
