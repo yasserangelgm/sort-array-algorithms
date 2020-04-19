@@ -1,4 +1,7 @@
-.barContainer {
+body {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.demoArea {
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -6,4 +9,25 @@
 
 .bar {
   margin: 0 1px 0 1px;
+}
+
+.barContainer {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.numberBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 40px;
+  outline: 1px solid;
+  outline-offset: -1px;
+  margin: 2px 0 0 1px;
+}
+
+#swap {
+  color: aliceblue;
+  background-color: brown;
 }
