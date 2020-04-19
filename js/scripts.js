@@ -23,6 +23,63 @@ var colorPalette = [
   "#632C21",
 ];
 
+const valueArray = [
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+];
+
+function FisherYatesShuffle() {
+  const orderedArray = [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+  ];
+  var index, temp;
+  var shuffledArray = orderedArray;
+  for (var i = shuffledArray.length - 1; i >= 1; i--) {
+    index = Math.floor(Math.random() * shuffledArray.length);
+    temp = shuffledArray[index];
+    shuffledArray[index] = shuffledArray[i];
+    shuffledArray[i] = temp;
+  }
+  return shuffledArray;
+}
+
 function createBar(width, value) {
   var bar = document.createElement("div");
   var height = value * 6;
@@ -33,16 +90,14 @@ function createBar(width, value) {
   return bar;
 }
 
-var miBarra = createBar("40px", 13);
-var barContainer = document.querySelector("#barContainer");
-barContainer.appendChild(miBarra);
-miBarra = createBar("40px", 8);
-barContainer.appendChild(miBarra);
-miBarra = createBar("40px", 3);
-barContainer.appendChild(miBarra);
-miBarra = createBar("40px", 20);
-barContainer.appendChild(miBarra);
-miBarra = createBar("40px", 18);
-barContainer.appendChild(miBarra);
-miBarra = createBar("40px", 1);
-barContainer.appendChild(miBarra);
+function makeBars(values) {
+  var barContainer = document.querySelector("#barContainer");
+  var shuffleBar;
+  for (var i = 0; i < values.length; i++) {
+    shuffleBar = createBar("40px", values[i]);
+    barContainer.appendChild(shuffleBar);
+  }
+}
+
+var shuffledArray = FisherYatesShuffle();
+makeBars(shuffledArray);
